@@ -4,7 +4,7 @@ $(function() {
 });
 
 function buttons() {
-	$('body').on('click', '#heightBtn', function() {
+	$('#form').on('click', '#heightBtn', function() {
 		event.preventDefault();
 		convertLength($('#unit').val(), $('#heightCom1').val(), $('#heightCom2').val());
 	});
