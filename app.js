@@ -6,6 +6,7 @@ $(function() {
 function buttons() {
 	$('#form').on('click', '#heightBtn', function() {
 		event.preventDefault();
+		console.log('Testing');
 		convertLength($('#unit').val(), $('#heightCom1').val(), $('#heightCom2').val());
 	});
 }
