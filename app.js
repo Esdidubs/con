@@ -31,11 +31,10 @@ const heightConversions = {
 	leaningTowerOfPisa : { size: 1 * 56.67, name: 'Leaning Tower of Pisa', pluralName: 'Leaning Towers of Pisa' },
 	whiteHouse         : { size: 0.3048 * 70, name: 'White House', pluralName: 'White Houses' }
 };
-
+$('#title').replaceWith(` <h1 id="title">Units Comparisons</h1> `);
 $(function() {
 	buttons();
 	listSetup();
-	$('#title').replaceWith(` <h1 id="title">Units Comparisons</h1> `);
 });
 
 function buttons() {
