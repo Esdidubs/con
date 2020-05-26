@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Unit Comparisons</h1>
+    <form class="form">
+        <input type="number" placeholder="Number" id="unit" step="any" min="0" /> 
+        <select name="heightCom1" id="heightCom1" class="heightCom">
+            <option value="" disabled selected>Item 1</option>
+        </select>
+        <span id="arrow">&#8594;</span>
+        <select name="heightCom2" id="heightCom2" class="heightCom">
+            <option value="" disabled selected>Item 2</option>
+        </select>
+        <button id="heightBtn">Compare</button>
+    </form>
+    <div id="heightResults"></div>
+    </main>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="CONVERSIONS.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
