@@ -35,6 +35,7 @@ const heightConversions = {
 $(function() {
 	buttons();
 	listSetup();
+	$('#title').replaceWith(` <h1 id="title">Units Comparisons</h1> `);
 });
 
 function buttons() {
