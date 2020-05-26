@@ -31,7 +31,9 @@ const heightConversions = {
 	leaningTowerOfPisa : { size: 1 * 56.67, name: 'Leaning Tower of Pisa', pluralName: 'Leaning Towers of Pisa' },
 	whiteHouse         : { size: 0.3048 * 70, name: 'White House', pluralName: 'White Houses' }
 };
-$('#title').replaceWith(` <h1 id="title">Units Comparisons</h1> `);
+$('#title').replaceWith(
+	` <h1 id="title">Units Comparisons</h1> `
+); /*
 $(function() {
 	buttons();
 	listSetup();
@@ -46,13 +48,7 @@ function buttons() {
 }
 
 function listSetup() {
-	/*
-	$.each(conversions, function(index) {
-		$('<option/>', {
-			value : index,
-			text  : conversions[index].name
-		}).appendTo($('.heightCom'));
-    }); */
+	
 	let listItems = '';
 	for (var key in heightConversions) {
 		listItems += `<option value="${key}">${heightConversions[key].name}</option>`;
@@ -81,4 +77,5 @@ function convertLength(unit, con1, con2) {
 	const statement = unit + ' ' + item1 + ' is equal to ' + fixedCalculation.toString() + ' ' + item2;
 	$('#heightResults').replaceWith(`<div id="heightResults">${statement}</div>`);
 	return statement;
-}
+} 
+*/
