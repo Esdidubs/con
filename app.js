@@ -11,12 +11,27 @@ function buttons() {
 }
 
 function listSetup() {
+	/*
 	$.each(conversions, function(index) {
 		$('<option/>', {
 			value : index,
 			text  : conversions[index].name
 		}).appendTo($('.heightCom'));
-	});
+    }); */
+	let listItems = '';
+	for (var key in conversions) {
+		listItems += `<option value="${key}">${conversions[key].name}</option>`;
+	}
+	$('#heightCom1').replaceWith(` 
+        <select name="heightCom1" id="heightCom1" class="heightCom">
+            <option value="" disabled selected>Item 1</option>
+            ${listItems}
+        </select>`);
+	$('#heightCom2').replaceWith(` 
+        <select name="heightCom2" id="heightCom2" class="heightCom">
+            <option value="" disabled selected>Item 2</option>
+            ${listItems}
+        </select>`);
 }
 
 function convertLength(unit, con1, con2) {
