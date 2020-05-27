@@ -41,7 +41,8 @@ function buttons() {
 	$('#form').on('click', '#heightBtn', function() {
 		event.preventDefault();
 		console.log('Testing');
-		convertLength($('#unit').val(), $('#heightCom1').val(), $('#heightCom2').val());
+		window.alert('Test');
+		//	convertLength($('#unit').val(), $('#heightCom1').val(), $('#heightCom2').val());
 	});
 }
 /*
@@ -62,7 +63,7 @@ function listSetup() {
             ${listItems}
         </select>`);
 }
-*/
+
 function convertLength(unit, con1, con2) {
 	const calculation = unit * heightConversions[con1].size / heightConversions[con2].size;
 	let fixedCalculation = parseFloat(calculation.toFixed(8))
@@ -76,3 +77,4 @@ function convertLength(unit, con1, con2) {
 	$('#heightResults').replaceWith(`<div id="heightResults">${statement}</div>`);
 	return statement;
 }
+*/
