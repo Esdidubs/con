@@ -34,7 +34,7 @@ const heightConversions = {
 
 $(function() {
 	buttons();
-	//	listSetup();
+	listSetup();
 });
 
 function buttons() {
@@ -45,9 +45,8 @@ function buttons() {
 		//	convertLength($('#unit').val(), $('#heightCom1').val(), $('#heightCom2').val());
 	});
 }
-/*
+
 function listSetup() {
-	
 	let listItems = '';
 	for (var key in heightConversions) {
 		listItems += `<option value="${key}">${heightConversions[key].name}</option>`;
@@ -64,25 +63,6 @@ function listSetup() {
         </select>`);
 }
 
-function convertLength(unit, con1, con2) {
-	const calculation = unit * heightConversions[con1].size / heightConversions[con2].size;
-	let fixedCalculation = parseFloat(calculation.toFixed(8))
-		.toString()
-		.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
-	let item1 = '';
-	let item2 = '';
-	unit == 1 ? (item1 = heightConversions[con1].name) : (item1 = heightConversions[con1].pluralName);
-	fixedCalculation == 1 ? (item2 = heightConversions[con2].name) : (item2 = heightConversions[con2].pluralName);
-	const statement = unit + ' ' + item1 + ' is equal to ' + fixedCalculation.toString() + ' ' + item2;
-	$('#heightResults').replaceWith(`<div id="heightResults">${statement}</div>`);
-	
-}
-
-let fixedCalculation = parseFloat(calculation.toFixed(8))
-		.toString()
-		.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
-*/
-
 function testFunc() {
 	let statement = $('#unit').val();
 	let statement2 = $('#heightCom1').val();
@@ -98,3 +78,9 @@ function testFunc() {
 	const resultS = statement + ' ' + item1 + ' is equal to ' + calculation.toString() + ' ' + item2;
 	$('#heightResults').replaceWith(`<div id="heightResults">${resultS}</div>`);
 }
+
+/*
+let fixedCalculation = parseFloat(calculation.toFixed(8))
+		.toString()
+		.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+*/
