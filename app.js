@@ -41,8 +41,7 @@ function buttons() {
 	$('#form').on('click', '#heightBtn', function() {
 		event.preventDefault();
 		console.log('Testing');
-		testFunc();
-		//	convertLength($('#unit').val(), $('#heightCom1').val(), $('#heightCom2').val());
+		calculateComparison();
 	});
 }
 
@@ -63,19 +62,19 @@ function listSetup() {
         </select>`);
 }
 
-function testFunc() {
+function calculateComparison() {
 	let statement = $('#unit').val();
 	let statement2 = $('#heightCom1').val();
 	let statement3 = $('#heightCom2').val();
 	const calculation = statement * heightConversions[statement2].size / heightConversions[statement3].size;
-
+	let fixedCalculation = parseFloat(calculation.toFixed(8));
 	let item1 = '';
 	let item2 = '';
 	statement == 1 ? (item1 = heightConversions[statement2].name) : (item1 = heightConversions[statement2].pluralName);
-	calculation == 1
+	fixedCalculation == 1
 		? (item2 = heightConversions[statement3].name)
 		: (item2 = heightConversions[statement3].pluralName);
-	const resultS = statement + ' ' + item1 + ' is equal to ' + calculation.toString() + ' ' + item2;
+	const resultS = statement + ' ' + item1 + ' is equal to ' + fixedCalculation.toString() + ' ' + item2;
 	$('#heightResults').replaceWith(`<div id="heightResults">${resultS}</div>`);
 }
 
