@@ -77,6 +77,10 @@ function convertLength(unit, con1, con2) {
 	$('#heightResults').replaceWith(`<div id="heightResults">${statement}</div>`);
 	
 }
+
+let fixedCalculation = parseFloat(calculation.toFixed(8))
+		.toString()
+		.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
 */
 
 function testFunc() {
@@ -84,15 +88,13 @@ function testFunc() {
 	let statement2 = $('#heightCom1').val();
 	let statement3 = $('#heightCom2').val();
 	const calculation = statement * heightConversions[statement2].size / heightConversions[statement3].size;
-	let fixedCalculation = parseFloat(calculation.toFixed(8))
-		.toString()
-		.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+
 	let item1 = '';
 	let item2 = '';
 	statement == 1 ? (item1 = heightConversions[statement2].name) : (item1 = heightConversions[statement2].pluralName);
-	fixedCalculation == 1
+	calculation == 1
 		? (item2 = heightConversions[statement3].name)
 		: (item2 = heightConversions[statement3].pluralName);
-	const resultS = statement + ' ' + item1 + ' is equal to ' + fixedCalculation.toString() + ' ' + item2;
+	const resultS = statement + ' ' + item1 + ' is equal to ' + calculation.toString() + ' ' + item2;
 	$('#heightResults').replaceWith(`<div id="heightResults">${resultS}</div>`);
 }
