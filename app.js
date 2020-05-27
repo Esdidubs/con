@@ -75,10 +75,12 @@ function convertLength(unit, con1, con2) {
 	fixedCalculation == 1 ? (item2 = heightConversions[con2].name) : (item2 = heightConversions[con2].pluralName);
 	const statement = unit + ' ' + item1 + ' is equal to ' + fixedCalculation.toString() + ' ' + item2;
 	$('#heightResults').replaceWith(`<div id="heightResults">${statement}</div>`);
-	return statement;
+	
 }
 */
 
 function testFunc() {
-	$('#title').replaceWith(`<h1 id="title">Test Comparisons</h1>`);
+	let statement = 'Hello';
+	$('#title').replaceWith(`<h1 id="title">Testing</h1>`);
+	$('#heightResults').replaceWith(`<div id="heightResults">${statement}</div>`);
 }
