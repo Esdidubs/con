@@ -83,6 +83,16 @@ function testFunc() {
 	let statement = $('#unit').val();
 	let statement2 = $('#heightCom1').val();
 	let statement3 = $('#heightCom2').val();
-	$('#title').replaceWith(`<h1 id="title">Testing</h1>`);
-	$('#heightResults').replaceWith(`<div id="heightResults">${statement} ${statement2} ${statement3}</div>`);
+	const calculation = statement * heightConversions[statement2].size / heightConversions[statement3].size;
+	let fixedCalculation = parseFloat(calculation.toFixed(8))
+		.toString()
+		.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+	let item1 = '';
+	let item2 = '';
+	statement == 1 ? (item1 = heightConversions[statement2].name) : (item1 = heightConversions[statement2].pluralName);
+	fixedCalculation == 1
+		? (item2 = heightConversions[statement3].name)
+		: (item2 = heightConversions[statement3].pluralName);
+	const resultS = statement + ' ' + item1 + ' is equal to ' + fixedCalculation.toString() + ' ' + item2;
+	$('#heightResults').replaceWith(`<div id="heightResults">${resultS}</div>`);
 }
