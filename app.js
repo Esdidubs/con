@@ -41,7 +41,7 @@ function buttons() {
 	$('#form').on('click', '#heightBtn', function() {
 		event.preventDefault();
 		console.log('Testing');
-		window.alert('Test');
+		testFunc();
 		//	convertLength($('#unit').val(), $('#heightCom1').val(), $('#heightCom2').val());
 	});
 }
@@ -78,3 +78,7 @@ function convertLength(unit, con1, con2) {
 	return statement;
 }
 */
+
+function testFunc() {
+	$('#title').replaceWith(`<h1 id="title">Test Comparisons</h1>`);
+}
