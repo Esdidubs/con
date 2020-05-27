@@ -34,7 +34,7 @@ const heightConversions = {
 
 $(function() {
 	buttons();
-	listSetup();
+	//	listSetup();
 });
 
 function buttons() {
@@ -80,7 +80,9 @@ function convertLength(unit, con1, con2) {
 */
 
 function testFunc() {
-	let statement = 'Hello';
+	let statement = $('#unit').val();
+	let statement2 = $('#heightCom1').val();
+	let statement3 = $('#heightCom2').val();
 	$('#title').replaceWith(`<h1 id="title">Testing</h1>`);
-	$('#heightResults').replaceWith(`<div id="heightResults">${statement}</div>`);
+	$('#heightResults').replaceWith(`<div id="heightResults">${statement} ${statement2} ${statement3}</div>`);
 }
