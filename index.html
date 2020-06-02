@@ -10,15 +10,29 @@
     <main>
         <h1 id="title">Unit Comparisons</h1>
     <form id="form">
-        <input type="number" placeholder="Number" id="unit" step="any" min="0" /> 
-        <select name="heightCom1" id="heightCom1" class="heightCom">
-            <option value="meter"  selected>meter</option>
-        </select>
-        <span id="arrow">&#8594;</span>
-        <select name="heightCom2" id="heightCom2" class="heightCom">
-            <option value="centimeter"  selected>Centimeter</option>
-        </select>
-        <button id="heightBtn">Compare</button>
+        <div>
+            <select name="unitSelection" id="unitSelection" class="heightCom">            
+                <option value="heightCompare"  selected>Height</option>
+                <option value="weightCompare"  >Weight</option>
+                <option value="volumeCompare"  >Volume</option>
+            </select>
+            <button id="unitBtn">Update</button>
+        </div>
+        
+        <div>
+            <input type="number" placeholder="Number" id="unit" step="any" min="0" /> 
+            <select name="heightCom1" id="heightCom1" class="heightCom">
+                <option value="meter"  selected>meter</option>
+            </select>
+            <span id="arrow">&#8594;</span>
+            <select name="heightCom2" id="heightCom2" class="heightCom">
+                <option value="centimeter"  selected>Centimeter</option>
+            </select>
+            <button id="heightBtn">Compare</button>
+        </div>
+        
+        
+        
     </form>
     <div id="heightResults"></div>
     </main>
