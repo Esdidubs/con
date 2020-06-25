@@ -6,14 +6,14 @@ $(function() {
 function buttons() {
 	$('#form').on('click', '#heightBtn', function() {
 		event.preventDefault();
-		console.log('Testing');
 		calculateComparison();
 	});
 
-	$('#form').on('click', '#unitBtn', function() {
+	$('#unitSelection').on('change', function() {
 		event.preventDefault();
-
 		listSetup();
+		$('#heightResults').replaceWith(`<div id="heightResults"></div>`);
+		$('#unit').val('');
 	});
 }
 
@@ -60,16 +60,12 @@ function calculateComparison() {
 
 	const calculation = statement * unitConversions[statement2].size / unitConversions[statement3].size;
 	let fixedCalculation = 0;
-	calculation > 1
-		? (fixedCalculation = parseFloat(calculation.toFixed(4)))
-		: (fixedCalculation = parseFloat(calculation.toFixed(12)));
+	calculation > 1 ? (fixedCalculation = parseFloat(calculation.toFixed(4))) : (fixedCalculation = parseFloat(calculation.toFixed(12)));
 
 	let item1 = '';
 	let item2 = '';
 	statement == 1 ? (item1 = unitConversions[statement2].name) : (item1 = unitConversions[statement2].pluralName);
-	fixedCalculation == 1
-		? (item2 = unitConversions[statement3].name)
-		: (item2 = unitConversions[statement3].pluralName);
+	fixedCalculation == 1 ? (item2 = unitConversions[statement3].name) : (item2 = unitConversions[statement3].pluralName);
 	const resultS = statement + ' ' + item1 + ' is equal to ' + fixedCalculation.toString() + ' ' + item2;
 	$('#heightResults').replaceWith(`<div id="heightResults">${resultS}</div>`);
 }

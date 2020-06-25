@@ -81,5 +81,29 @@ input,
 .heightCom option,
 button {
 	padding: 10px;
-	width: 25rem;
+	width: 100%;
+}
+
+label {
+	font-size: 2rem;
+}
+form,
+#unitSection,
+#firstCompare,
+#secondCompare {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#compareSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+hr {
+	background-color: #55c57a;
+	width: 100%;
 }
