@@ -1,8 +1,10 @@
+// Run on load
 $(function() {
 	buttons();
 	listSetup();
 });
 
+// Button and select events
 function buttons() {
 	$('#form').on('click', '#heightBtn', function() {
 		event.preventDefault();
@@ -17,6 +19,7 @@ function buttons() {
 	});
 }
 
+// Populates the dropdowns based on the unit selected
 function listSetup() {
 	let listItems = '';
 	if ($('#unitSelection').val() == 'heightCompare') {
@@ -45,11 +48,13 @@ function listSetup() {
         </select>`);
 }
 
+// calculates the conversion and updates the name to be plural if needed
 function calculateComparison() {
 	let statement = $('#unit').val();
 	let statement2 = $('#heightCom1').val();
 	let statement3 = $('#heightCom2').val();
 	let unitConversions = [];
+
 	if ($('#unitSelection').val() == 'heightCompare') {
 		unitConversions = heightConversions;
 	} else if ($('#unitSelection').val() == 'weightCompare') {
@@ -69,9 +74,3 @@ function calculateComparison() {
 	const resultS = statement + ' ' + item1 + ' is equal to ' + fixedCalculation.toString() + ' ' + item2;
 	$('#heightResults').replaceWith(`<div id="heightResults">${resultS}</div>`);
 }
-
-/*
-let fixedCalculation = parseFloat(calculation.toFixed(8))
-		.toString()
-		.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
-*/
