@@ -9,37 +9,33 @@
 <body>
     <main>
         <h1 id="title">Unit Conversions</h1>
-    <form id="form">
-        <div id="unitSection">
-            <label for="unitSelection">Height, Weight, or Volume?</label>
-            <select name="unitSelection" id="unitSelection" class="heightCom">            
-                <option value="heightCompare"  selected>Height</option>
-                <option value="weightCompare"  >Weight</option>
-                <option value="volumeCompare"  >Volume</option>
-            </select>
-        </div>
-        <div id="compareSection">
-            <div id="firstCompare">
-                <label for="heightCom1">Enter a number and choose a unit</label>
-                <input type="number" placeholder="Number" id="unit" step="any" min="0" /> 
-                <select name="heightCom1" id="heightCom1" class="heightCom">
-                    <option value="meter"  selected>meter</option>
+        <form id="form">
+            <div id="unitSection">
+                <label for="unitSelection">Height, Weight, or Volume?</label>
+                <select name="unitSelection" id="unitSelection" class="heightCom">            
+                    <option value="heightConversions" selected>Height</option>
+                    <option value="weightConversions">Weight</option>
+                    <option value="volumeConversions">Volume</option>
                 </select>
             </div>
-            <div id="secondCompare">
-                <label for="heightCom2">Convert into these units:</label>
-                <select name="heightCom2" id="heightCom2" class="heightCom">
-                    <option value="centimeter"  selected>Centimeter</option>
-                </select>
-            </div>
-            
-            <button id="heightBtn">Convert</button>
-        </div>
-        
-        
-        
-    </form>
-    <div id="heightResults"></div>
+            <div id="compareSection">
+                <div id="firstCompare">
+                    <label for="heightCom1">Enter a number and choose a unit</label>
+                    <input type="number" placeholder="Number" id="unit" step="any" min="0" /> 
+                    <select name="heightCom1" id="heightCom1" class="heightCom">
+                        <option value="meter" selected>meter</option>
+                    </select>
+                </div>
+                <div id="secondCompare">
+                    <label for="heightCom2">Convert into these units:</label>
+                    <select name="heightCom2" id="heightCom2" class="heightCom">
+                        <option value="centimeter"  selected>Centimeter</option>
+                    </select>
+                </div>            
+                <button id="heightBtn">Convert</button>
+            </div>    
+        </form>
+        <div id="heightResults"></div>
     </main>
     
     <script
