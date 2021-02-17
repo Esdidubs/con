@@ -3,61 +3,54 @@ html {
 }
 
 body {
-	margin: 0;
 	box-sizing: border-box;
+	margin: 0;	
 }
 
 main {
-	text-align: center;
 	margin: 15px;
-}
-
-#form {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	align-items: center;
-	margin: 30px;
-}
-
-#form * {
-	margin: 5px;
-	font-weight: bold;
-}
-
-#heightResults {
-	font-size: 24px;
-	margin-top: 15px;
+	text-align: center;	
 }
 
 button {
-	text-transform: uppercase;
-	text-decoration: none;
-	padding: 15px 40px;
-	display: inline-block;
-	transition: all 0.2s;
-	position: relative;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
 	background-color: #21a44c;
+	border: none;
 	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	padding: 15px 40px;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;	
+	transition: all 0.2s;
+	width: 100%;
 }
 
 button:hover {
-	transform: translateY(-3px);
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	transform: translateY(-3px);	
 }
 button:hover::after {
-	transform: scaleX(1.4) scaleY(1.6);
 	opacity: 0;
+	transform: scaleX(1.4) scaleY(1.6);	
 }
 
 button:active,
 button:focus {
-	outline: none;
-	transform: translateY(-1px);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	outline: none;
+	transform: translateY(-1px);	
+}
+
+h1 {	
+	color: #21a44c;
+	font-size: 48px;
+	margin: 20px;
+}
+
+input{
+	box-sizing: border-box;
 }
 
 input,
@@ -65,22 +58,45 @@ select {
 	outline-color: #21a44c;
 }
 
-h1 {
-	margin: 20px;
-	font-size: 48px;
-	color: #21a44c;
+label {
+	font-size: 2rem;
 }
 
+#form {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 30px;
+}
+
+#form * {
+	font-weight: bold;
+	margin: 5px;
+}
+
+#heightResults {
+	font-size: 24px;
+	margin-top: 15px;
+}
+
+#unitSection,
+#compareSection {
+	width: 30rem;
+}
+
+#unit,
 .heightCom,
-.heightCom option,
-button,
-input {
+.heightCom option {
 	padding: 10px;
 	width: 100%;
 }
 
-label {
-	font-size: 2rem;
+#firstCompare,
+#secondCompare,
+#unit
+ {
+	width: 100%;
 }
 
 #unitSection,
@@ -88,7 +104,14 @@ label {
 #secondCompare,
 #compareSection,
 form {
+	align-items: center;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+}
+
+@media (max-width: 400px) {
+	#unitSection,
+	#compareSection {
+		width: 20rem;
+	}
 }
